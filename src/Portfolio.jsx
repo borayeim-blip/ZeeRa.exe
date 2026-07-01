@@ -11,9 +11,7 @@ import {
   ExternalLink,
   CircleDot,
 } from "lucide-react";
-
 const AVATAR_SRC = "data:image/jpeg;base64,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";
-
 // ---------------------------------------------------------------------------
 // EDIT ME: swap in your own details. Nothing below this block needs touching
 // unless you want to restructure the page.
@@ -72,7 +70,7 @@ const CONFIG = {
       version: "v1.4.0",
       status: "online",
       desc: "A Paper plugin suite covering land claims, custom mob loot tables, and a lightweight economy \u2014 built for a 200+ player SMP.",
-      tags: ["Kotlin", "Paper API", "SQLite"],
+      tags: ["Kotlin", "Paper API","Spigot API" ,"SQLite"],
     },
     {
       name: "Server Ops Dashboard",
@@ -229,34 +227,236 @@ export default function Portfolio() {
         minHeight: "100vh",
       }}
     >
-      <style>{`
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .glow { text-shadow: 0 0 24px rgba(63,185,80,0.35); }
-        @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-        .cursor { animation: blink 1s step-start infinite; }
+      <style>
+      
+      {`
+        /* Base responsive improvements */
+        * {
+          box-sizing: border-box;
+        }
+
+        /* Mobile first approach */
+        .container {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        /* Responsive text sizes */
+        .mono {
+          font-size: clamp(11px, 2.5vw, 13px);
+        }
+
+        h1 {
+          font-size: clamp(24px, 6vw, 40px) !important;
+        }
+
+        h2 {
+          font-size: clamp(13px, 3vw, 18px) !important;
+        }
+
+        p {
+          font-size: clamp(14px, 2.8vw, 17px) !important;
+        }
+
+        /* Responsive layouts */
+        @media (max-width: 768px) {
+          /* Hero section */
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+            padding: 24px 16px 32px !important;
+          }
+
+          /* Navigation */
+          .nav-links {
+            gap: 12px !important;
+            flex-wrap: wrap;
+          }
+
+          /* Hide nav on very small screens */
+          @media (max-width: 480px) {
+            .nav-links {
+              gap: 8px !important;
+            }
+            .nav-links button {
+              font-size: 11px !important;
+              padding: 4px 8px !important;
+            }
+          }
+
+          /* Avatar size */
+          .avatar-wrapper {
+            width: 96px !important;
+            height: 96px !important;
+          }
+
+          /* Skills grid */
+          .skills-grid {
+            grid-template-columns: 1fr !important;
+          }
+
+          /* Projects grid */
+          .projects-grid {
+            grid-template-columns: 1fr !important;
+          }
+
+          /* Contact section */
+          .contact-wrapper {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            padding: 20px !important;
+          }
+
+          .contact-buttons {
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+          }
+
+          .contact-buttons a {
+            flex: 1 !important;
+            min-width: 140px !important;
+            justify-content: center !important;
+          }
+
+          /* Hero buttons */
+          .hero-buttons {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+
+          .hero-buttons button {
+            width: 100% !important;
+            justify-content: center !important;
+            padding: 14px 18px !important;
+            font-size: 15px !important;
+          }
+
+          /* Boot terminal */
+          .boot-terminal {
+            padding: 16px !important;
+            min-height: 200px !important;
+          }
+
+          /* About section */
+          .about-wrapper {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+
+          .about-text {
+            text-align: center !important;
+            max-width: 100% !important;
+          }
+        }
+
+        /* Tablet */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .skills-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .projects-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+
+        /* Touch target improvements */
+        button, a {
+          min-height: 44px !important;
+          min-width: 44px !important;
+        }
+
+        .nav-link {
+          padding: 8px 12px !important;
+        }
+
+        /* Prevent overflow */
+        img, svg {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .glow { 
+          text-shadow: 0 0 24px rgba(63,185,80,0.35); 
+        }
+        
+        @keyframes blink { 
+          0%, 49% { opacity: 1; } 
+          50%, 100% { opacity: 0; } 
+        }
+        
+        .cursor { 
+          animation: blink 1s step-start infinite; 
+        }
+        
         @keyframes pulseDot {
           0% { box-shadow: 0 0 0 0 rgba(63,185,80,0.55); }
           70% { box-shadow: 0 0 0 8px rgba(63,185,80,0); }
           100% { box-shadow: 0 0 0 0 rgba(63,185,80,0); }
         }
-        .pulse-dot { border-radius: 50%; animation: pulseDot 2.2s ease-out infinite; }
-        .stagger > * { opacity: 0; animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-        .skill-tag { transition: border-color 0.15s ease, color 0.15s ease; }
-        .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
-        .proj-card { transition: transform 0.18s ease, border-color 0.18s ease; }
-        .proj-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-        .nav-link { transition: color 0.15s ease; }
-        .nav-link:hover { color: var(--accent); }
-        .btn-primary { transition: opacity 0.15s ease, transform 0.15s ease; }
-        .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-        a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        
+        .pulse-dot { 
+          border-radius: 50%; 
+          animation: pulseDot 2.2s ease-out infinite; 
+        }
+        
+        .stagger > * { 
+          opacity: 0; 
+          animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
+        }
+        
+        @keyframes fadeUp { 
+          from { opacity: 0; transform: translateY(14px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        .skill-tag { 
+          transition: border-color 0.15s ease, color 0.15s ease; 
+        }
+        
+        .skill-tag:hover { 
+          border-color: var(--accent); 
+          color: var(--accent); 
+        }
+        
+        .proj-card { 
+          transition: transform 0.18s ease, border-color 0.18s ease; 
+        }
+        
+        .proj-card:hover { 
+          transform: translateY(-3px); 
+          border-color: var(--accent); 
+        }
+        
+        .nav-link { 
+          transition: color 0.15s ease; 
+        }
+        
+        .nav-link:hover { 
+          color: var(--accent); 
+        }
+        
+        .btn-primary { 
+          transition: opacity 0.15s ease, transform 0.15s ease; 
+        }
+        
+        .btn-primary:hover { 
+          opacity: 0.88; 
+          transform: translateY(-1px); 
+        }
+        
+        a:focus-visible, button:focus-visible { 
+          outline: 2px solid var(--accent); 
+          outline-offset: 2px; 
+        }
+        
         @media (prefers-reduced-motion: reduce) {
           .cursor { animation: none; }
           .pulse-dot { animation: none; }
           .stagger > * { animation: none; opacity: 1; }
           .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
         }
+
       `}</style>
 
       {/* NAV */}
@@ -274,17 +474,19 @@ export default function Portfolio() {
           style={{
             maxWidth: 1080,
             margin: "0 auto",
-            padding: "14px 24px",
+            padding: "14px 20px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 8,
           }}
         >
-          <div className="mono" style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 700 }}>
-            <Terminal size={18} color="var(--accent)" />
+          <div className="mono" style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 15px)" }}>
+            <Terminal size={clamp(16, 2.5, 18)} color="var(--accent)" />
             <span>{CONFIG.name.split(" ")[0].toLowerCase()}@servers</span>
           </div>
-          <nav style={{ display: "flex", gap: 24 }} className="mono">
+          <nav className="nav-links" style={{ display: "flex", gap: "clamp(8px, 2vw, 24px)", flexWrap: "wrap" }}>
             {["about", "skills", "projects", "contact"].map((id) => (
               <button
                 key={id}
@@ -294,9 +496,12 @@ export default function Portfolio() {
                   background: "none",
                   border: "none",
                   color: "var(--muted)",
-                  fontSize: 13,
+                  fontSize: "clamp(11px, 2vw, 13px)",
                   cursor: "pointer",
-                  padding: 0,
+                  padding: "6px 10px",
+                  minHeight: "44px",
+                  minWidth: "44px",
+                  textTransform: "capitalize",
                 }}
               >
                 {id}
@@ -308,17 +513,18 @@ export default function Portfolio() {
 
       {/* HERO */}
       <section
+        className="hero-grid"
         style={{
           maxWidth: 1080,
           margin: "0 auto",
-          padding: "72px 24px 56px",
+          padding: "clamp(40px, 8vw, 72px) 20px clamp(32px, 6vw, 56px)",
           display: "grid",
           gridTemplateColumns: "1fr",
           gap: 32,
         }}
       >
         <div
-          className="mono"
+          className="boot-terminal"
           style={{
             background: "var(--surface)",
             border: "1px solid var(--border)",
@@ -335,16 +541,19 @@ export default function Portfolio() {
               padding: "10px 14px",
               borderBottom: "1px solid var(--border)",
               background: "var(--surface-2)",
+              flexWrap: "wrap",
             }}
           >
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#FF5F56" }} />
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#FFBD2E" }} />
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#27C93F" }} />
-            <span style={{ marginLeft: 10, fontSize: 12, color: "var(--muted)" }}>server-boot &mdash; 80x24</span>
+            <span className="mono" style={{ marginLeft: 10, fontSize: "clamp(10px, 2vw, 12px)", color: "var(--muted)" }}>
+              server-boot &mdash; 80x24
+            </span>
           </div>
-          <div style={{ padding: "20px 20px 24px", fontSize: 13, lineHeight: 1.9, minHeight: 240 }}>
+          <div style={{ padding: "clamp(16px, 4vw, 20px)", fontSize: "clamp(11px, 2.5vw, 13px)", lineHeight: 1.9, minHeight: "clamp(200px, 40vh, 240px)" }}>
             {renderedLines.map((line, i) => (
-              <div key={i} style={{ color: TAG_COLOR[line.tag] || "var(--text)" }}>
+              <div key={i} style={{ color: TAG_COLOR[line.tag] || "var(--text)", wordBreak: "break-word" }}>
                 {line.text}
                 {i === renderedLines.length - 1 && !done && <span className="cursor">{"\u2588"}</span>}
               </div>
@@ -356,18 +565,19 @@ export default function Portfolio() {
                   style={{
                     fontFamily: "'JetBrains Mono', monospace",
                     fontWeight: 800,
-                    fontSize: "clamp(28px, 4vw, 40px)",
+                    fontSize: "clamp(24px, 6vw, 40px)",
                     color: "var(--text)",
                     margin: 0,
+                    lineHeight: 1.2,
                   }}
                 >
                   {CONFIG.name}
                 </h1>
-                <p style={{ color: "var(--accent)", marginTop: 6, fontSize: 15 }}>{CONFIG.title}</p>
-                <p style={{ color: "var(--muted)", marginTop: 14, maxWidth: 560, fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.6 }}>
+                <p style={{ color: "var(--accent)", marginTop: 6, fontSize: "clamp(13px, 2.8vw, 15px)" }}>{CONFIG.title}</p>
+                <p style={{ color: "var(--muted)", marginTop: 14, maxWidth: 560, fontFamily: "'Inter', sans-serif", fontSize: "clamp(14px, 2.8vw, 15px)", lineHeight: 1.6 }}>
                   {CONFIG.tagline}
                 </p>
-                <div style={{ display: "flex", gap: 12, marginTop: 22, flexWrap: "wrap" }}>
+                <div className="hero-buttons" style={{ display: "flex", gap: 12, marginTop: 22, flexWrap: "wrap" }}>
                   <button
                     onClick={() => scrollTo("projects")}
                     className="btn-primary"
@@ -376,11 +586,13 @@ export default function Portfolio() {
                       color: "#06240E",
                       border: "none",
                       borderRadius: 6,
-                      padding: "10px 18px",
+                      padding: "clamp(12px, 2.5vw, 14px) clamp(16px, 3vw, 20px)",
                       fontFamily: "'Inter', sans-serif",
                       fontWeight: 600,
-                      fontSize: 14,
+                      fontSize: "clamp(13px, 2.5vw, 14px)",
                       cursor: "pointer",
+                      minHeight: "48px",
+                      minWidth: "48px",
                     }}
                   >
                     View projects
@@ -393,11 +605,13 @@ export default function Portfolio() {
                       color: "var(--text)",
                       border: "1px solid var(--border)",
                       borderRadius: 6,
-                      padding: "10px 18px",
+                      padding: "clamp(12px, 2.5vw, 14px) clamp(16px, 3vw, 20px)",
                       fontFamily: "'Inter', sans-serif",
                       fontWeight: 600,
-                      fontSize: 14,
+                      fontSize: "clamp(13px, 2.5vw, 14px)",
                       cursor: "pointer",
+                      minHeight: "48px",
+                      minWidth: "48px",
                     }}
                   >
                     Get in touch
@@ -408,23 +622,25 @@ export default function Portfolio() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <ChevronDown size={20} color="var(--muted)" />
+          <ChevronDown size={clamp(18, 3, 20)} color="var(--muted)" />
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" style={{ maxWidth: 1080, margin: "0 auto", padding: "24px 24px 64px" }}>
+      <section id="about" style={{ maxWidth: 1080, margin: "0 auto", padding: "20px 20px 48px" }}>
         <Reveal>
           <SectionLabel text="about" />
-          <div style={{ display: "flex", gap: 32, alignItems: "flex-start", flexWrap: "wrap" }}>
-            <div style={{ flexShrink: 0 }}>
+          <div className="about-wrapper" style={{ display: "flex", gap: "clamp(20px, 4vw, 32px)", alignItems: "flex-start", flexWrap: "wrap" }}>
+            <div style={{ flexShrink: 0, width: "100%", maxWidth: 128, margin: "0 auto" }}>
               <div
+                className="avatar-wrapper"
                 style={{
-                  width: 128,
-                  height: 128,
+                  width: "clamp(96px, 20vw, 128px)",
+                  height: "clamp(96px, 20vw, 128px)",
                   borderRadius: "50%",
                   padding: 3,
                   background: "linear-gradient(135deg, var(--accent), var(--accent-2))",
+                  margin: "0 auto",
                 }}
               >
                 <img
@@ -448,17 +664,19 @@ export default function Portfolio() {
                   gap: 5,
                   justifyContent: "center",
                   marginTop: 10,
-                  fontSize: 11,
+                  fontSize: "clamp(10px, 2vw, 11px)",
                   color: "var(--accent)",
                 }}
               >
-                <CircleDot size={10} color="var(--accent)" className="pulse-dot" />
+                <CircleDot size={clamp(8, 1.5, 10)} color="var(--accent)" className="pulse-dot" />
                 online
               </div>
             </div>
-            <div style={{ flex: 1, minWidth: 260 }}>
-              <p style={{ fontSize: 17, lineHeight: 1.75, color: "var(--text)", maxWidth: 640, margin: 0 }}>{CONFIG.bio}</p>
-              <p className="mono" style={{ marginTop: 16, color: "var(--muted)", fontSize: 13 }}>
+            <div className="about-text" style={{ flex: 1, minWidth: "clamp(200px, 50vw, 260px)" }}>
+              <p style={{ fontSize: "clamp(15px, 3vw, 17px)", lineHeight: 1.75, color: "var(--text)", maxWidth: 640, margin: "0 auto" }}>
+                {CONFIG.bio}
+              </p>
+              <p className="mono" style={{ marginTop: 16, color: "var(--muted)", fontSize: "clamp(12px, 2.5vw, 13px)", textAlign: "center" }}>
                 based in {CONFIG.location}
               </p>
             </div>
@@ -467,10 +685,10 @@ export default function Portfolio() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" style={{ maxWidth: 1080, margin: "0 auto", padding: "24px 24px 64px" }}>
+      <section id="skills" style={{ maxWidth: 1080, margin: "0 auto", padding: "20px 20px 48px" }}>
         <Reveal>
           <SectionLabel text="skills" />
-          <div className="stagger" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
+          <div className="skills-grid stagger" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(clamp(200px, 30vw, 240px), 1fr))", gap: "clamp(16px, 2.5vw, 20px)" }}>
             {CONFIG.skillGroups.map((group, gi) => {
               const Icon = ICONS[group.icon] || Code2;
               return (
@@ -480,25 +698,26 @@ export default function Portfolio() {
                     background: "var(--surface)",
                     border: "1px solid var(--border)",
                     borderRadius: 10,
-                    padding: 20,
+                    padding: "clamp(16px, 3vw, 20px)",
                     animationDelay: `${gi * 90}ms`,
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-                    <Icon size={18} color="var(--accent)" />
-                    <h3 style={{ margin: 0, fontSize: 15, fontWeight: 700 }}>{group.label}</h3>
+                    <Icon size={clamp(16, 2.5, 18)} color="var(--accent)" />
+                    <h3 style={{ margin: 0, fontSize: "clamp(14px, 2.8vw, 15px)", fontWeight: 700 }}>{group.label}</h3>
                   </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(6px, 1.5vw, 8px)" }}>
                     {group.items.map((item) => (
                       <span
                         key={item}
                         className="skill-tag mono"
                         style={{
-                          fontSize: 12,
-                          padding: "5px 10px",
+                          fontSize: "clamp(10px, 2vw, 12px)",
+                          padding: "clamp(4px, 1vw, 5px) clamp(8px, 2vw, 10px)",
                           borderRadius: 5,
                           border: "1px solid var(--border)",
                           color: "var(--muted)",
+                          wordBreak: "break-word",
                         }}
                       >
                         {item}
@@ -513,10 +732,10 @@ export default function Portfolio() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" style={{ maxWidth: 1080, margin: "0 auto", padding: "24px 24px 64px" }}>
+      <section id="projects" style={{ maxWidth: 1080, margin: "0 auto", padding: "20px 20px 48px" }}>
         <Reveal>
           <SectionLabel text="projects" />
-          <div className="stagger" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
+          <div className="projects-grid stagger" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(clamp(260px, 40vw, 300px), 1fr))", gap: "clamp(16px, 2.5vw, 20px)" }}>
             {CONFIG.projects.map((p, pi) => (
               <div
                 key={p.name}
@@ -525,42 +744,44 @@ export default function Portfolio() {
                   background: "var(--surface)",
                   border: "1px solid var(--border)",
                   borderRadius: 10,
-                  padding: 20,
+                  padding: "clamp(16px, 3vw, 20px)",
                   display: "flex",
                   flexDirection: "column",
                   gap: 12,
                   animationDelay: `${pi * 80}ms`,
                 }}
               >
-                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8, flexWrap: "wrap" }}>
                   <div>
-                    <div className="mono" style={{ fontWeight: 700, fontSize: 15 }}>
+                    <div className="mono" style={{ fontWeight: 700, fontSize: "clamp(14px, 2.8vw, 15px)" }}>
                       {p.name}
                     </div>
-                    <div className="mono" style={{ fontSize: 12, color: "var(--muted)", marginTop: 2 }}>
+                    <div className="mono" style={{ fontSize: "clamp(11px, 2vw, 12px)", color: "var(--muted)", marginTop: 2 }}>
                       {p.platform} &middot; {p.version}
                     </div>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 5, flexShrink: 0 }}>
                     <CircleDot
-                      size={12}
+                      size={clamp(10, 1.5, 12)}
                       color={STATUS_COLOR[p.status] || "var(--muted)"}
                       className={p.status === "online" ? "pulse-dot" : ""}
                     />
-                    <span className="mono" style={{ fontSize: 11, color: STATUS_COLOR[p.status] || "var(--muted)" }}>
+                    <span className="mono" style={{ fontSize: "clamp(10px, 2vw, 11px)", color: STATUS_COLOR[p.status] || "var(--muted)" }}>
                       {p.status}
                     </span>
                   </div>
                 </div>
-                <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "var(--text)", margin: 0 }}>{p.desc}</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: "auto" }}>
+                <p style={{ fontSize: "clamp(13px, 2.5vw, 14px)", lineHeight: 1.6, color: "var(--text)", margin: 0 }}>
+                  {p.desc}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(4px, 1vw, 6px)", marginTop: "auto" }}>
                   {p.tags.map((t) => (
                     <span
                       key={t}
                       className="mono"
                       style={{
-                        fontSize: 11,
-                        padding: "3px 8px",
+                        fontSize: "clamp(10px, 2vw, 11px)",
+                        padding: "clamp(2px, 0.8vw, 3px) clamp(6px, 1.5vw, 8px)",
                         borderRadius: 4,
                         background: "var(--surface-2)",
                         color: "var(--muted)",
@@ -577,36 +798,39 @@ export default function Portfolio() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" style={{ maxWidth: 1080, margin: "0 auto", padding: "24px 24px 96px" }}>
+      <section id="contact" style={{ maxWidth: 1080, margin: "0 auto", padding: "20px 20px 64px" }}>
         <Reveal>
           <SectionLabel text="contact" />
           <div
+            className="contact-wrapper"
             style={{
               background: "var(--surface)",
               border: "1px solid var(--border)",
               borderRadius: 10,
-              padding: 28,
+              padding: "clamp(20px, 4vw, 28px)",
               display: "flex",
               flexWrap: "wrap",
-              gap: 28,
+              gap: "clamp(20px, 4vw, 28px)",
               alignItems: "center",
               justifyContent: "space-between",
             }}
           >
-            <div>
-              <h3 style={{ margin: 0, fontSize: 20, fontWeight: 700 }}>Let's build something that stays online.</h3>
-              <p style={{ color: "var(--muted)", marginTop: 8, fontSize: 14, maxWidth: 420 }}>
+            <div style={{ flex: 1, minWidth: "clamp(200px, 50vw, 300px)" }}>
+              <h3 style={{ margin: 0, fontSize: "clamp(18px, 3.5vw, 20px)", fontWeight: 700 }}>
+                Let's build something that stays online.
+              </h3>
+              <p style={{ color: "var(--muted)", marginTop: 8, fontSize: "clamp(13px, 2.5vw, 14px)", maxWidth: 420 }}>
                 Whether it's a FiveM resource, a Minecraft plugin, or the dashboard tying it together{" \u2014 "}I'm open to hearing about it.
               </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }} className="mono">
-              <ContactLink icon={<Mail size={16} />} label={CONFIG.email} href={`mailto:${CONFIG.email}`} />
-              <ContactLink icon={<Github size={16} />} label="GitHub" href={CONFIG.github} />
-              <ContactLink icon={<MessageCircle size={16} />} label={CONFIG.discord} href="#" />
+            <div className="contact-buttons" style={{ display: "flex", flexDirection: "column", gap: 10, minWidth: "clamp(160px, 30vw, 200px)" }}>
+              <ContactLink icon={<Mail size={clamp(14, 2, 16)} />} label={CONFIG.email} href={`mailto:${CONFIG.email}`} />
+              <ContactLink icon={<Github size={clamp(14, 2, 16)} />} label="GitHub" href={CONFIG.github} />
+              <ContactLink icon={<MessageCircle size={clamp(14, 2, 16)} />} label={CONFIG.discord} href="#" />
             </div>
           </div>
-          <footer style={{ textAlign: "center", marginTop: 48, color: "var(--muted)", fontSize: 12 }} className="mono">
-            <ExternalLink size={12} style={{ verticalAlign: "middle", marginRight: 6 }} />
+          <footer style={{ textAlign: "center", marginTop: 48, color: "var(--muted)", fontSize: "clamp(11px, 2vw, 12px)" }} className="mono">
+            <ExternalLink size={clamp(10, 1.5, 12)} style={{ verticalAlign: "middle", marginRight: 6 }} />
             built with React &middot; {new Date().getFullYear()}
           </footer>
         </Reveal>
@@ -617,11 +841,11 @@ export default function Portfolio() {
 
 function SectionLabel({ text }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
-      <span className="mono" style={{ color: "var(--accent)", fontSize: 13 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: "clamp(8px, 2vw, 10px)", marginBottom: "clamp(16px, 3vw, 24px)" }}>
+      <span className="mono" style={{ color: "var(--accent)", fontSize: "clamp(12px, 2.5vw, 13px)" }}>
         //
       </span>
-      <h2 className="mono" style={{ margin: 0, fontSize: 13, letterSpacing: 2, color: "var(--muted)", textTransform: "uppercase" }}>
+      <h2 className="mono" style={{ margin: 0, fontSize: "clamp(12px, 2.5vw, 13px)", letterSpacing: 2, color: "var(--muted)", textTransform: "uppercase" }}>
         {text}
       </h2>
       <span style={{ flex: 1, height: 1, background: "var(--border)" }} />
@@ -638,11 +862,14 @@ function ContactLink({ icon, label, href }) {
         alignItems: "center",
         gap: 8,
         color: "var(--text)",
-        fontSize: 13,
+        fontSize: "clamp(12px, 2.5vw, 13px)",
         textDecoration: "none",
         border: "1px solid var(--border)",
         borderRadius: 6,
-        padding: "8px 12px",
+        padding: "10px 14px",
+        minHeight: "44px",
+        minWidth: "44px",
+        transition: "border-color 0.15s ease",
       }}
       onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent)")}
       onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
@@ -651,4 +878,11 @@ function ContactLink({ icon, label, href }) {
       {label}
     </a>
   );
+}
+
+// Helper function for responsive icon sizes
+function clamp(min, pref, max) {
+  if (pref < min) return min;
+  if (pref > max) return max;
+  return pref;
 }
